@@ -47,8 +47,14 @@ class Main:
     def db_drop(self):
         dt = DriversTable()
         ct = CarsTable()
-        dt.drop()
-        ct.drop()
+        try:
+            dt.drop()
+        except Exception:
+            pass
+        try:
+            ct.drop()
+        except Exception:
+            pass
         return
 
     def show_main_menu(self):
